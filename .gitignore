@@ -1,0 +1,52 @@
+# .gitignore
+
+# 密钥和环境变量
+.env
+.env.*
+!*.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.venv/
+
+# Node
+node_modules/
+package-lock.json
+yarn.lock
+
+# 日志（大文件，按需保留）
+logs/*.log
+!logs/.gitkeep
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Hermes
+.hermes/
+*.sqlite
+*.db
+
+# 备份文件
+*.bak
+*.bak-*
+*.backup

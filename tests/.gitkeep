@@ -1,0 +1,25 @@
+# 测试用例模板
+# 用法：复制这个文件到 tests/advisor-cases.json 并填写真实用例
+
+{
+  "cases": [
+    {
+      "id": "example-1",
+      "description": "示例：安全规则例外判断",
+      "context": "主脑想添加一个安全命令豁免规则",
+      "question": "是否存在能证明安全的豁免规则？",
+      "expected": "不存在，所有豁免都应删除",
+      "actual": null,
+      "passed": false
+    },
+    {
+      "id": "example-2",
+      "description": "示例：任务优先级排序",
+      "context": "有 3 个待办：A（未定性告警）、B（付费客户卡死 62 天）、C（UI 优化）",
+      "question": "哪个应该排第一？",
+      "expected": "B（已实际伤害付费客户）",
+      "actual": null,
+      "passed": false
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+#!/bin/bash
+# pre-commit hook - 上下文预算门禁
+# 在 commit 前自动检查规则文件总大小
+
+echo "Running context budget check..."
+
+# 调用检查脚本
+bash scripts/check-context-budget.sh
+
+if [ $? -eq 0 ]; then
+    echo "Context budget check passed."
+    exit 0
+else
+    echo ""
+    echo "❌ Context budget check FAILED."
+    echo "   Cannot commit until rules are within budget."
+    echo "   Run './scripts/check-context-budget.sh' for details."
+    exit 1
+fi
