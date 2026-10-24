@@ -48,7 +48,7 @@
 
 - 所有 Agent 行为数据长期保存
 - 用于复盘、回测、追溯历史决策
-- Claude Code 默认 30 天删除，需修改配置
+- Claude Code 默认 30 天删除，需修改配置：`claude config set telemetry.enabled true`
 
 ## Skill 优先级
 

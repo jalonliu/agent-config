@@ -14,9 +14,11 @@
 
 ## 日志文件
 
-按日期分文件：`YYYY-MM-DD.jsonl`
+按日期分文件：`logs/current/YYYY-MM-DD.jsonl`
+归档到：`logs/archive/YYYY-MM/`
 
 ## 保留策略
 
-- 长期保留（不做自动删除）
-- 定期归档到压缩格式节省空间
+- 活跃日志：`logs/current/`（不超过 90 天）
+- 归档日志：`logs/archive/`（长期保留，压缩格式）
+- 不做自动删除，定期手动归档

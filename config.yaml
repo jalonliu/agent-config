@@ -1,0 +1,31 @@
+# agent-config global config
+# Secrets go in .env, not here
+
+agent:
+  default_executor: pi
+  default_advisor_model: opus           # 高价值判断用强模型
+  main_brain_budget_bytes: 24576        # 24KB
+  executor_budget_bytes: 12288          # 12KB
+
+tools:
+  claude_code:
+    memory_enabled: false               # 用共享 memory/ 替代
+    behavior_log_retention_days: 0      # 0 = 永久保留
+  pi:
+    skill_loading: off                  # 执行器不加载 Skill
+    default_model: deepseek-v4.1-flash-free
+
+mcp:
+  # 项目级别控制，非必要不开
+  enabled: false
+  servers: []
+
+skill:
+  # 优先级：吸收到工作流 > 项目级 > 全局
+  global_only_high_frequency: true
+  project_level_preferred: true
+
+loop:
+  # 所有 Agent 会话的问题/调度反馈统一汇报到这里
+  issue_reporting: true
+  daily_review: true
